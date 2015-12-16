@@ -365,6 +365,7 @@ class CourseAnnouncementEdit(UpdateView):
     template_name = 'edit_course_announcments.html'
     context_object_name = 'course_announcement'
     fields = ('name', 'comment')
+    
 def student_view_course_announcments(request, course_id):
     course = get_object_or_404(Course, pk=course_id)
     students = Student.objects.filter(course__pk=course_id)
