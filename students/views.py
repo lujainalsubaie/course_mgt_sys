@@ -48,7 +48,7 @@ def edit_profile(request):
 
 
 def instructor_edit_profile(request, pk):
-    if not request.user.instructor:
+    if not request.user.is_instructor:
         raise Http404
     obj = Student.objects.get(pk=pk)
     if request.method == 'POST':
